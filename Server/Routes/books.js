@@ -25,6 +25,20 @@ router.get('/add', (req, res, next) => {
     res.render('books/details', { title: 'Books', page: 'books', books: '' });
 });
 router.post('/add', (req, res, next) => {
+    let newBook = new books_1.default({
+        "Title": req.body.title,
+        "Description": "",
+        "Price": req.body.price,
+        "Author": req.body.author,
+        "Genre": req.body.genre
+    });
+    books_1.default.create(newBook, (err) => {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/books');
+    });
 });
 router.get('/:id', (req, res, next) => {
 });
