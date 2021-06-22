@@ -10,7 +10,7 @@ import book from '../Models/books';
 router.get('/', (req, res, next) => 
 {
   // find all books in the books collection
-  book.find( (err, books) => {
+  book.find((err, books) => {
     if (err) {
       return console.error(err);
     }
@@ -28,10 +28,7 @@ router.get('/', (req, res, next) =>
 //  GET the Book Details page in order to add a new Book
 router.get('/add', (req, res, next) => {
 
-    /*****************
-     * ADD CODE HERE *
-     *****************/
-
+  res.render('books/details', { title: 'Books',page: 'books',books: '' });
 });
 
 // POST process the Book Details page and create a new Book - CREATE
