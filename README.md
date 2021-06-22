@@ -1,5 +1,3 @@
-# COMP229-M2021-MidTerm Test (TypeScript version)
+# COMP229-M2021-MidTerm-301171192
 
 ## Welcome to the MidTerm Project - the Favourite Book List App
-
-please use **`npm install`** to install project dependencies
