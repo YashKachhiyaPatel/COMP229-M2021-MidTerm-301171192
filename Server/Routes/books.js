@@ -8,16 +8,12 @@ const router = express_1.default.Router();
 exports.default = router;
 const books_1 = __importDefault(require("../Models/books"));
 router.get('/', (req, res, next) => {
-    books_1.default.find((err, books) => {
+    books_1.default.find({}, null, { sort: { Title: 1 } }, (err, books) => {
         if (err) {
             return console.error(err);
         }
         else {
-            res.render('books/index', {
-                title: 'Books',
-                page: 'books',
-                books: books
-            });
+            res.render('books/index', { title: 'Books', page: 'books', books: books });
         }
     });
 });

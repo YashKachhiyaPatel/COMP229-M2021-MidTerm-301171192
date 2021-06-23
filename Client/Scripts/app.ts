@@ -1,6 +1,8 @@
 //IIFE -- Immediately Invoked Function Expression
 "use strict";
 
+// Yash Kachhiyapatel (301171192) - 18-June-2021 -MidTerm Exam 
+
 (function(){
 
     function confirmDelete()

@@ -10,16 +10,12 @@ import book from '../Models/books';
 router.get('/', (req, res, next) => 
 {
   // find all books in the books collection
-  book.find((err, books) => {
+  book.find({}, null, {sort: {Title: 1}},(err, books) => {
     if (err) {
       return console.error(err);
     }
     else {
-      res.render('books/index', {
-        title: 'Books',
-        page: 'books',
-        books: books
-      });
+      res.render('books/index', { title: 'Books', page: 'books', books: books });
     }
   });
 
